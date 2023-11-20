@@ -14,7 +14,7 @@ namespace MVCFinalProject.Models
         public int? Year { get; set; }
 
         [Required(ErrorMessage = "Please enter a developer.")]
-        public int? Developer { get; set; }
+        public string Developer { get; set; }
 
         [Required(ErrorMessage = "Please enter a genre.")]
         public string Genre { get; set; }
@@ -22,5 +22,4 @@ namespace MVCFinalProject.Models
         public string Slug =>
           Name?.Replace(' ', '-').ToLower() + '-' + Year?.ToString();
     }
-}
 }
