@@ -15,7 +15,7 @@ namespace MVCFinalProject.Controllers
 
         public IActionResult Index()
         {
-            var games = context.Games.OrderBy(x => x.Name).ToList();
+            var games = context.Games.OrderBy(x => x.Year).ToList();
             return View(games);
         }
     }
