@@ -4,6 +4,7 @@ namespace MVCFinalProject.Models
 {
     public class Game
     {
+        [Key]
         public int GameId { get; set; }
 
         [Required(ErrorMessage = "Please eneter a name.")]
