@@ -6,16 +6,17 @@ namespace MVCFinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private GameContext context {  get; set; }  
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(GameContext ctx)
         {
-            _logger = logger;
+            context = ctx;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var games = context.Games;
+            return View(games);
         }
     }
 }
