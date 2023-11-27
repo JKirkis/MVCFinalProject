@@ -62,12 +62,5 @@ namespace MVCFinalProject.Controllers
             context.SaveChanges();
             return RedirectToAction("Index", "Home");
         }
-
-
-        public IActionResult Index()
-        {
-            return View();
-
-        }
     }
 }
