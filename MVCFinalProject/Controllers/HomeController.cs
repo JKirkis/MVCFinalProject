@@ -6,7 +6,7 @@ namespace MVCFinalProject.Controllers
 {
     public class HomeController : Controller
     {
-        private GameContext context {  get; set; }
+        private GameContext context {  get; set; }  
 
         public HomeController(GameContext ctx)
         {
@@ -15,7 +15,7 @@ namespace MVCFinalProject.Controllers
 
         public IActionResult Index()
         {
-            var games = context.Games.OrderBy(x => x.Name).ToList();
+            var games = context.Games;
             return View(games);
         }
     }

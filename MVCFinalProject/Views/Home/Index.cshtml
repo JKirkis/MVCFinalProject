@@ -1,23 +1,22 @@
 ﻿@model List<Game>
 @{
-    ViewBag.Title = "Game List";
+    ViewBag.Title = "Games";
 }
 
 <h1>Video Game List!</h1>
 
-<a asp-controller="Game" asp-action="Add">Add New Game</a>
-<table class="table table-bordered table-striped">
+<a asp-controller="Game" asp-action="Add">Add New Games</a>
+<table class="table">
     <thead>
         <tr>
             <th>Name</th>
             <th>Year</th>
             <th>Developer</th>
             <th>Genre</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var game in Model)
+        @foreach( var game in Model)
         {
             <tr>
                 <td>@game.Name</td>
