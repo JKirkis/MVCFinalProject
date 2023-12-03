@@ -39,7 +39,7 @@ namespace MVCFinalProject.Controllers
                 else
                     context.Games.Update(game);
                 context.SaveChanges();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Game");
             }
             else
             {
@@ -60,13 +60,14 @@ namespace MVCFinalProject.Controllers
         {
             context.Games.Remove(game);
             context.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Game");
         }
 
-
-        public IActionResult Index()
+        [Route("games/{genre}")]
+        public IActionResult Details (string genre)
         {
-            return View();
+            var game = context.Games.FirstOrDefault(g => g.Genre == genre);
+            return View(game);
 
         }
     }

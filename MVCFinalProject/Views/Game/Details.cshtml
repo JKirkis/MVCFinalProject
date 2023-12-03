@@ -1,0 +1,24 @@
+﻿@model Game
+
+<h1>Game Details</h1>
+
+<dl>
+    <dt>Name:</dt>
+    <dd>@Model.Name</dd>
+
+    <dt>Year:</dt>
+    <dd>@Model.Year</dd>
+
+    <dt>Developer:</dt>
+    <dd>@Model.Developer</dd>
+
+    <dt>Genre:</dt>
+    <dd>@Model.Genre</dd>
+</dl>
+
+<p>
+    <a asp-controller="Game" asp-action="Edit" asp-route-id="@Model.GameId">Edit</a> 
+    <a asp-controller="Game" asp-action="Delete" asp-route-id="@Model.GameId">Delete</a> 
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
+</p>
+

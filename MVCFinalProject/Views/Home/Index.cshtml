@@ -23,6 +23,7 @@
                 <td>@game.Developer</td>
                 <td>@game.Genre</td>
                 <td>
+                    <a asp-controller="Game" asp-action="Details" asp-route-id="@game.GameId">Details</a>
                     <a asp-controller="Game" asp-action="Edit" asp-route-id="@game.GameId">Edit</a>
                     <a asp-controller="Game" asp-action="Delete" asp-route-id="@game.GameId">Delete</a>
                 </td>
