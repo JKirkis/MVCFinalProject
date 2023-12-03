@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*
+    This is the HomeController where it redirects you to the index
+ */
+
+using Microsoft.AspNetCore.Mvc;
 using MVCFinalProject.Models;
 using System.Diagnostics;
 

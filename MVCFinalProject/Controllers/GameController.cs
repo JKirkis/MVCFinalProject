@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿/*
+ * This is the Game Controller to edit, add, delete and filter game genre
+ */
+
+using Microsoft.AspNetCore.Mvc;
 using MVCFinalProject.Models;
 
 

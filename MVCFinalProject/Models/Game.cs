@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿/*
+ * This is the game class 
+ */
+using System.ComponentModel.DataAnnotations;
 
 namespace MVCFinalProject.Models
 {

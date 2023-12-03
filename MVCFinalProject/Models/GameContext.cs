@@ -1,4 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+ * This the gamecontext class it adds to the database
+ */
+
+using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualBasic;
 
 namespace MVCFinalProject.Models
