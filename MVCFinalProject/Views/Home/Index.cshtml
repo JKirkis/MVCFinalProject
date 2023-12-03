@@ -14,7 +14,7 @@
         <option value="">All Genres</option>
         @foreach(var game in Model)
         {
-            <option>@game.Genre</option>
+            <option value="@game.Genre">@game.Genre</option>
         }
 
     </select>
