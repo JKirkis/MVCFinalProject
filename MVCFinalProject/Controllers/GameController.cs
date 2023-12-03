@@ -35,6 +35,7 @@ namespace MVCFinalProject.Controllers
         public IActionResult Add()
         {
             ViewBag.Action = "Add";
+            ViewBag.SelectedGenre = "";
             return View("Edit", new Game());
         }
 
@@ -43,6 +44,7 @@ namespace MVCFinalProject.Controllers
         {
             ViewBag.Action = "Edit";
             var game = context.Games.Find(id);
+            ViewBag.SelectedGenre = game.Genre;
             return View(game);
         }
 

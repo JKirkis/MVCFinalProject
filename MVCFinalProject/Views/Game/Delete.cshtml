@@ -10,8 +10,16 @@
 </head>
 <body>
     <h2>Confirm Deleteion</h2>
-    <h3>@Model.Name (@Model.Genre)</h3>
-
+   
+    <table>
+        <tr>
+            <td>@Model.Name</td>
+            <td>@Model.Year</td>
+            <td>@Model.Developer</td>
+            <td>@Model.Genre</td>
+        </tr>
+    </table>
+    <br />
     <form asp-action="Delete" method="post">
         <input type="hidden" asp-for="GameId" />
 
