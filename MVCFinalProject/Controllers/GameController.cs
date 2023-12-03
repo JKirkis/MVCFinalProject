@@ -13,6 +13,23 @@ namespace MVCFinalProject.Controllers
         {
             context = ctx;
         }
+        [HttpGet]
+        public IActionResult FilteredGames(string genreFilter)
+        {
+            var games = context.Games.AsQueryable();
+
+            ViewData["SelectedGenre"] = genreFilter;
+
+            if (!string.IsNullOrEmpty(genreFilter))
+            {
+                games = games.Where(g => g.Genre == genreFilter);
+            }
+
+            return View("FilteredIndex", games.ToList());
+        }
+
+
+
 
         [HttpGet]
         public IActionResult Add()
@@ -39,7 +56,7 @@ namespace MVCFinalProject.Controllers
                 else
                     context.Games.Update(game);
                 context.SaveChanges();
-                return RedirectToAction("Index", "Game");
+                return RedirectToAction("Index", "Home");
             }
             else
             {
@@ -60,15 +77,21 @@ namespace MVCFinalProject.Controllers
         {
             context.Games.Remove(game);
             context.SaveChanges();
-            return RedirectToAction("Index", "Game");
+            return RedirectToAction("Index", "Home");
         }
-
-        [Route("games/{genre}")]
-        public IActionResult Details (string genre)
+        [HttpGet]
+        [Route("games/details-by-name/{name}")]
+        public IActionResult DetailsByName(string name)
         {
-            var game = context.Games.FirstOrDefault(g => g.Genre == genre);
-            return View(game);
+            var game = context.Games.FirstOrDefault(g => g.Name == name);
 
+            if (game == null)
+            {
+                return NotFound(); 
+            }
+
+            return View("Details", game);
         }
+
     }
 }

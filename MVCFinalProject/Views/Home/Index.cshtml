@@ -4,6 +4,16 @@
 }
 
 <h1>Video Game List!</h1>
+<form asp-controller="Game" asp-action="FilteredGames" method="get">
+    <label for="genreFilter">Filter by Genre:</label>
+    <select id="genreFilter" name="genreFilter">
+        <option value="">All Genres</option>
+        <option value="First-person shooter">First-person shooter</option>
+        <option value="Adventure">Adventure</option>
+        
+    </select>
+    <button type="submit">Filter</button>
+</form>
 
 <table class="table">
     <thead>
@@ -23,9 +33,9 @@
                 <td>@game.Developer</td>
                 <td>@game.Genre</td>
                 <td>
-                    <a asp-controller="Game" asp-action="Details" asp-route-id="@game.GameId">Details</a>
-                    <a asp-controller="Game" asp-action="Edit" asp-route-id="@game.GameId">Edit</a>
-                    <a asp-controller="Game" asp-action="Delete" asp-route-id="@game.GameId">Delete</a>
+                    <a asp-controller="Game" asp-action="DetailsByName" asp-route-name="@game.Name">Details</a>
+                    <a asp-controller="Game" asp-action="Edit" asp-route-id="@game?.GameId">Edit</a>
+                    <a asp-controller="Game" asp-action="Delete" asp-route-id="@game?.GameId">Delete</a>
                 </td>
             </tr>
         }

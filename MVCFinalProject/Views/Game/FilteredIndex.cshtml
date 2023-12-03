@@ -1,0 +1,27 @@
+﻿@model List<Game>
+
+@{
+    ViewBag.Title = "Filtered Games";
+}
+
+<h1>List of Genres!</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var game in Model)
+        {
+            <tr>
+                <td>@game.Name</td>
+                <td>@game.Genre</td>
+                
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Home" asp-action="Index">Return</a>
