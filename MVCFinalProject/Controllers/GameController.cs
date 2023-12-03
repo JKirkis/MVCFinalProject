@@ -24,10 +24,8 @@ namespace MVCFinalProject.Controllers
 
             ViewData["SelectedGenre"] = genreFilter;
 
-            if (!string.IsNullOrEmpty(genreFilter))
-            {
-                games = games.Where(g => g.Genre == genreFilter);
-            }
+            games = games.Where(g => g.Genre == genreFilter);
+            
 
             return View("FilteredIndex", games.ToList());
         }
